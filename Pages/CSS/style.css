@@ -1,0 +1,140 @@
+body{
+    font-family: serif;
+    color: #98189A ;
+}
+#container{
+background-color: #fae6ff;
+min-height: 100vh;
+padding: 30px;
+}
+.card_main{
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 0px;
+}
+.card{
+    padding-left: 50px;
+    padding-right: 50px;    
+    border: none;
+}
+.card_main>p{
+    padding: 30px;
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, blue, violet);
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.logo>img{
+    width: 170px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.physicalOnline{
+    border-bottom: 2px solid #98189A;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.physicalOnline>button{
+    background: none;
+    border: none;
+    border-left: 2px solid #293B90;
+    border-right: 2px solid #293B90;
+    border-top: 2px solid #293B90;
+    padding: 10px 101px 10px 100px;
+    color: #98189A;
+    border-radius: 10px 10px 0px 0px;
+    font-size: 19px;
+}
+.physicalOnline>button:hover{
+    color: #293B90;
+    border-left: 2px solid #98189A;
+    border-right: 2px solid #98189A;
+    border-top: 2px solid #98189A;
+}
+.card>p{
+    color: #808080;
+    font-size: 10px;
+}
+input{
+    outline: none;
+    border-color: none;
+    color: #98189A !important;
+    outline-color: #98189A !important;
+    border-color: #98189A;
+    border-radius: 8px;
+    padding: 6px;
+    margin: 3px 0px 10px 0px;
+}
+.message{
+    color: red !important;
+    display: none;
+}
+.card>div>span{
+   color:  #FAE6FF;
+   font-size: 14px;
+   line-height: 21px;
+}
+.checkboxDiv>input{
+    margin-right: 10px;
+}
+.Already_member{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.Already_member>button{
+    border: none;
+    background: none;
+}
+.Already{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #98189A;
+}
+.Sign{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: blue;
+}
+.Sign:hover{
+    text-decoration: underline !important;
+    color: #293B90;
+}
+.signUp{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin: 20px;
+}
+.signUp>button{
+    padding: 5px 70px 5px 70px;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    line-height: 27px;
+    border-radius: 20px;
+    background: linear-gradient(to right, rgb(0, 8, 255), violet);
+}

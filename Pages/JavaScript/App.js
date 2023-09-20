@@ -51,6 +51,7 @@ var nameInput = document.createElement("input");
 card.appendChild(nameInput);
 nameInput.setAttribute("type", "text");
 nameInput.setAttribute("placeholder", "Name");
+// input.style.color = "red"
 // Father Name input
 var FathernameInput = document.createElement("input");
 card.appendChild(FathernameInput);
@@ -76,25 +77,99 @@ var MobileInput = document.createElement("input");
 card.appendChild(MobileInput);
 MobileInput.setAttribute("type", "number");
 MobileInput.setAttribute("placeholder", "Mobile Number");
-// Course input
-var CourseInput = document.createElement("input");
-card.appendChild(CourseInput);
-CourseInput.setAttribute("type", "text");
-CourseInput.setAttribute("placeholder", "Select Course");
+
+
+// select course 
+var selectCourse = document.createElement("select");
+card.appendChild(selectCourse);
+// course option
+var selecteOption = document.createElement("option");
+selectCourse.appendChild(selecteOption);
+selecteOption.disabled = true;
+selecteOption.selected = true;
+selecteOption.innerHTML = "select Course";
+// web
+var WebOption = document.createElement("option");
+selectCourse.appendChild(WebOption);
+WebOption.innerHTML = "Web Development & Web Designing";
+// Graphic
+var GraphicOption = document.createElement("option");
+selectCourse.appendChild(GraphicOption);
+GraphicOption.innerHTML = "Graphic Design";
+// Wordpress
+var WordpressOption = document.createElement("option");
+selectCourse.appendChild(WordpressOption);
+WordpressOption.innerHTML = "Wordpress";
+// Mobile App
+var MobileAppOption = document.createElement("option");
+selectCourse.appendChild(MobileAppOption);
+MobileAppOption.innerHTML = "Mobile App Development";
+// Freelancing
+var FreelancingOption = document.createElement("option");
+selectCourse.appendChild(GraphicOption);
+FreelancingOption.innerHTML = "Freelancing";
+
+// Qualification select
+var selectQualification = document.createElement("select");
+card.appendChild(selectQualification);
+// optionQualification option
+var optionQualification = document.createElement("option");
+selectQualification.appendChild(optionQualification);
+optionQualification.disabled = true;
+optionQualification.selected = true;
+optionQualification.innerHTML = "Select Qualification";
+// optionMatriculation
+var optionMatriculation = document.createElement("option");
+selectQualification.appendChild(optionMatriculation);
+optionMatriculation.innerHTML = "Matriculation"
+// optionIntermediate
+var optionIntermediate = document.createElement("select");
+selectQualification.appendChild(optionIntermediate);
+optionIntermediate.innerHTML = "Intermediate";
+// Graduate 
+var optionGraduate = document.createElement("option");
+selectQualification.appendChild(optionGraduate);
+optionGraduate.innerHTML = "Graduate";
+
+// Gender Select
+var selectGender = document.createElement("select");
+card.appendChild(selectGender);
+// Select Gender
+var selectGenderD = document.createElement("option");
+selectGender.appendChild(selectGenderD);
+selectGenderD.innerHTML = "select Gender";
+selectGenderD.disabled = true;
+selectGenderD.selected = true;
+// Male 
+var male = document.createElement("option");
+selectGender.appendChild(male);
+male.innerHTML = "Male";
+// feMale 
+var feMale = document.createElement("option");
+selectGender.appendChild(feMale);
+feMale.innerHTML = "Female"
+
+
+// // Course input
+// var CourseInput = document.createElement("input");
+// card.appendChild(CourseInput);
+// CourseInput.setAttribute("type", "text");
+// CourseInput.setAttribute("placeholder", "Select Course");
 // Qualification input
-var QualificationInput = document.createElement("input");
-card.appendChild(QualificationInput);
-QualificationInput.setAttribute("type", "text");
-QualificationInput.setAttribute("placeholder", "Select Qualification");
-// Gender input
-var GenderInput = document.createElement("input");
-card.appendChild(GenderInput);
-GenderInput.setAttribute("type", "text");
-GenderInput.setAttribute("placeholder", "Select Gender");
+// var QualificationInput = document.createElement("input");
+// card.appendChild(QualificationInput);
+// QualificationInput.setAttribute("type", "text");
+// QualificationInput.setAttribute("placeholder", "Select Qualification");
+// // Gender input
+// var GenderInput = document.createElement("input");
+// card.appendChild(GenderInput);
+// GenderInput.setAttribute("type", "text");
+// GenderInput.setAttribute("placeholder", "Select Gender");
 // Photo input
 var PhotoInput = document.createElement("input");
 card.appendChild(PhotoInput);
 PhotoInput.setAttribute("type", "text");
+// PhotoInput.setAttribute("type", "file");
 PhotoInput.setAttribute("placeholder", "Select Photo");
 // message 
 var message = document.createElement("p");
@@ -105,6 +180,7 @@ message.setAttribute("class", "message");
 // Upload Paragraph
 var uploadPara = document.createElement("p");
 card.appendChild(uploadPara);
+uploadPara.setAttribute("class", "uploadPara")
 uploadPara.innerHTML = "Upload your passport size photo with blue background";
 // checkboxDiv
 var checkboxDiv = document.createElement("div");
@@ -141,8 +217,9 @@ var signUp = document.createElement("button");
 signUpDiv.appendChild(signUp);
 signUp.innerHTML = "Sign Up";
 // sign up Function
-signUp.setAttribute("onclick", "signUp()");
-function signUp(){
+signUp.setAttribute("onclick", "signup()");
+var DataObject = [];
+function signup(){
     if(nameInput.value === ""){
         message.innerHTML = "Name is required!";
         message.style.display = "block";
@@ -191,31 +268,35 @@ function signUp(){
         setTimeout(()=>{
             message.style.display = "none";
         }, 1000)
-    }else if(CourseInput.value === ""){
-        message.innerHTML = "Course is required!";
-        message.style.display = "block";
-        message.style.color = "red";
-        nameInput.focus();
-        setTimeout(()=>{
-            message.style.display = "none";
-        }, 1000)
-    }else if(QualificationInput.value === ""){
-        message.innerHTML = "Qualification is required!";
-        message.style.display = "block";
-        message.style.color = "red";
-        nameInput.focus();
-        setTimeout(()=>{
-            message.style.display = "none";
-        }, 1000)
-    }else if(GenderInput.value === ""){
-        message.innerHTML = "Gender is required!";
-        message.style.display = "block";
-        message.style.color = "red";
-        nameInput.focus();
-        setTimeout(()=>{
-            message.style.display = "none";
-        }, 1000)
-    }else if(PhotoInput.value === ""){
+    }
+    // else if(CourseInput.value === ""){
+    //     message.innerHTML = "Course is required!";
+    //     message.style.display = "block";
+    //     message.style.color = "red";
+    //     nameInput.focus();
+    //     setTimeout(()=>{
+    //         message.style.display = "none";
+    //     }, 1000)
+    // }
+    // else if(QualificationInput.value === ""){
+    //     message.innerHTML = "Qualification is required!";
+    //     message.style.display = "block";
+    //     message.style.color = "red";
+    //     nameInput.focus();
+    //     setTimeout(()=>{
+    //         message.style.display = "none";
+    //     }, 1000)
+    // }
+    // else if(GenderInput.value === ""){
+    //     message.innerHTML = "Gender is required!";
+    //     message.style.display = "block";
+    //     message.style.color = "red";
+    //     nameInput.focus();
+    //     setTimeout(()=>{
+    //         message.style.display = "none";
+    //     }, 1000)
+    // }
+    else if(PhotoInput.value === ""){
         message.innerHTML = "Photo is required!";
         message.style.display = "block";
         message.style.color = "red";
@@ -226,7 +307,7 @@ function signUp(){
     }else{
         message.style.display = "block";
         message.style.color = "green";
-        message.innerHTML = "Succes";
+        message.innerHTML = "Data is submitted uccesfully ";
         setTimeout(() =>{
             message.style.display = "none";
             nameInput.value = "";
@@ -235,39 +316,33 @@ function signUp(){
             passwordInput.value = "";
             CNICInput.value = "";
             MobileInput.value = "";
-            CourseInput.value = "";
-            QualificationInput.value = "";
-            GenderInput.value = "";
+            // CourseInput.value = "";
+            // QualificationInput.value = "";
+            // GenderInput.value = "";
             PhotoInput.value = " ";
         }, 1000)
-
-        // 
-        var DataObject = {
+        DataObject = {
             name:  nameInput.value,
             Fathername: FathernameInput.value,
             email: emailInput.value,
             password: passwordInput.value,
             CNIC: CNICInput.value,
             Mobile: MobileInput.value,
-            Course: CourseInput.value,
-            Qualification: QualificationInput.value,
-            Gender:GenderInput.value,
+            // Course: CourseInput.value,
+            // Qualification: QualificationInput.value,
+            // Gender:GenderInput.value,
             Photo: PhotoInput.value,
         }
-        console.log(DataObject);
-        // console.log(nameInput.value);
-        // console.log(FathernameInput.value);
-        // console.log(emailInput.value);
-        // console.log(passwordInput.value);
-        // console.log(CNICInput.value);
-        // console.log(MobileInput.value);
-        // console.log(CourseInput.value);
-        // console.log(QualificationInput.value);
-        // console.log(GenderInput.value);
-        // console.log(PhotoInput.value);
     }
 }
-    // empty col 2 right
+// Sign In Button
+SignButton.setAttribute("onclick", "signin()");
+function signin(){
+    console.log("Data Object", DataObject);
+}
+
+
+// empty col 2 right
 var emptyCol2 = document.createElement("div");
 row.appendChild(emptyCol2);
 emptyCol2.setAttribute("class", "col");
